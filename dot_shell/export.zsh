@@ -12,9 +12,8 @@ export LC_ALL="en_US.UTF-8"
 
 # Editor
 if (( $+commands[code] )); then
-    env -i LANG=zh_TW.UTF-8 LC_ALL="zh_TW.UTF-8" LANGUAGE="zh_TW:zh" code
-    export EDITOR="$(which code) --wait"
-    export VISUAL="$(which code)"
+    export EDITOR="$HOME/.shell/editor.zsh"
+    export VISUAL="$HOME/.shell/editor.zsh"
 else
     export EDITOR="$(which joe)"
     export VISUAL=${EDITOR}

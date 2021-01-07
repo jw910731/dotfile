@@ -1,5 +1,5 @@
- [core]
-	editor = "code --wait"
+#[core]
+#	editor = "code --wait"
 
 [diff]
     tool = default-difftool
