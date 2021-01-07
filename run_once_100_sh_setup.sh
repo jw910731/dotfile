@@ -20,3 +20,5 @@ fi
 if [ ! -d "$HOME/dev" ]; then
     mkdir "$HOME/dev"
 fi
+
+zsh -i -c "compaudit | xargs chmod g-w"
