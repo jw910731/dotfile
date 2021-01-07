@@ -48,3 +48,7 @@ source $HOME/.sh_env
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+{{- if eq .chezmoi.os "darwin" }}
+test -e /Users/jw910731/.iterm2_shell_integration.zsh && source /Users/jw910731/.iterm2_shell_integration.zsh || true
+{{- end }}

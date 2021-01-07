@@ -1,5 +1,5 @@
 # EDITOR
-
+export BAT_PAGER="less -RF"
 export PAGER='less'
 
 # Other env var
@@ -19,4 +19,8 @@ path=(
 
 
 # LESS
-export LESS='-F -g -i -M -R -S -w -X -z-4'
+
+# Set the default Less options.
+# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
+# Remove -X and -F (exit if the content fits on one screen) to enable it.
+export LESS='-R -F -g -i -M -R -S -w -z-4'
