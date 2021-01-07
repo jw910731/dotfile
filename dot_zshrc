@@ -1,0 +1,47 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
+# Load Zinit
+if [[ ! -d ~/.zinit ]]; then
+  mkdir -p ~/.zinit && \
+    git clone --depth 1 \
+      https://github.com/zdharma/zinit.git \
+      ~/.zinit/bin
+fi
+source ~/.zinit/bin/zinit.zsh
+
+# Setup Zinit Plugins
+## p10k
+zinit depth"1" light-mode for \
+  @romkatv/powerlevel10k
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+zstyle ':completion:*' max-errors 3
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/jw910731/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd beep nomatch
+unsetopt extendedglob notify
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+# Custom zsh config
+setopt AUTO_PARAM_SLASH # (autocomplete) If completed parameter is a directory, add a trailing slash
+unsetopt MENU_COMPLETE # Do not autoselect the first completion entry
+unsetopt FLOW_CONTROL # Disable start/stop characters (^Z, ^C, etc) in shell editor
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

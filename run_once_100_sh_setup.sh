@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+echo Installing CLI stuff.
+
+# install prezto (disabled for now)
+
+#if [ ! -e "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+#  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+#  git clone --recurse-submodules https://github.com/belak/prezto-contrib "${ZDOTDIR:-$HOME}/.zprezto/contrib"
+#fi
+
+# install zinit
+
+if [ ! -e "$HOME/.zinit" ]; then
+  mkdir ~/.zinit
+  git clone https://github.com/zdharma/zinit.git $HOME/.zinit/bin
+  zsh -i -c "zinit self-update"
+fi
