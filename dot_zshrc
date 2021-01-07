@@ -43,5 +43,8 @@ setopt AUTO_PARAM_SLASH # (autocomplete) If completed parameter is a directory, 
 unsetopt MENU_COMPLETE # Do not autoselect the first completion entry
 unsetopt FLOW_CONTROL # Disable start/stop characters (^Z, ^C, etc) in shell editor
 
+# Source general source files
+source $HOME/.sh_env
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

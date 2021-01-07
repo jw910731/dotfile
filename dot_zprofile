@@ -1,0 +1,22 @@
+# EDITOR
+
+export PAGER='less'
+
+# Other env var
+export GOPATH=$HOME/dev/go
+export GOBIN=$GOPATH/bin
+
+# PATH settings
+typeset -gU path
+
+path=(
+    $HOME/dev
+    $HOME/.local/bin
+    $HOME/dev/bin
+    $GOBIN
+    $path
+)
+
+
+# LESS
+export LESS='-F -g -i -M -R -S -w -X -z-4'

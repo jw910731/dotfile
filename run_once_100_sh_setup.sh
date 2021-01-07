@@ -12,7 +12,11 @@ echo Installing CLI stuff.
 # install zinit
 
 if [ ! -e "$HOME/.zinit" ]; then
-  mkdir ~/.zinit
-  git clone https://github.com/zdharma/zinit.git $HOME/.zinit/bin
-  zsh -i -c "zinit self-update"
+    mkdir ~/.zinit
+    git clone https://github.com/zdharma/zinit.git $HOME/.zinit/bin
+    zsh -i -c "zinit self-update"
+fi
+
+if [ ! -d "$HOME/dev" ]; then
+    mkdir "$HOME/dev"
 fi

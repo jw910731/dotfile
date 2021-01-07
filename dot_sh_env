@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+# `.sh_env` is a file for general purpose utils.
+
+source $HOME/.shell/alias.zsh
+source $HOME/.shell/export.zsh
