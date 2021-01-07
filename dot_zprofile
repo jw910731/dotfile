@@ -5,6 +5,7 @@ export PAGER='less'
 # Other env var
 export GOPATH=$HOME/dev/go
 export GOBIN=$GOPATH/bin
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 # PATH settings
 typeset -gU path
