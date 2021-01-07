@@ -1,0 +1,11 @@
+*
+-tab 4
+-istep 4
+
+{{- if eq .chezmoi.os "darwin" }}
+:include /usr/local/etc/joe/joerc.zh_TW
+{{- end }}
+
+-mouse
+-assume_256color
+
