@@ -14,8 +14,8 @@ export LC_ALL="en_US.UTF-8"
 
 # Editor
 if (( $+commands[code] )); then
-    export EDITOR="$(which code)"
-    export VISUAL="$HOME/.shell/editor.zsh"
+    export EDITOR="$HOME/.shell/editor.zsh"
+    export VISUAL="$(which code)"
 else
     export EDITOR="$(which joe)"
     export VISUAL=${EDITOR}
