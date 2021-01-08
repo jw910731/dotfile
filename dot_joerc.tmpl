@@ -6,6 +6,10 @@
 :include /usr/local/etc/joe/joerc.zh_TW
 {{- end }}
 
+{{- if eq .chezmoi.os "linux" }}
+:include /etc/joe/joerc.zh_TW
+{{- end }}
+
 -mouse
 -assume_256color
 

@@ -3,9 +3,13 @@ export BAT_PAGER="less -RF"
 export PAGER='less'
 
 # Other env var
+if (( $+commands[go] )); then
 export GOPATH=$HOME/dev/go
 export GOBIN=$GOPATH/bin
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+fi
+if [ -x /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+fi
 
 # PATH settings
 typeset -gU path
