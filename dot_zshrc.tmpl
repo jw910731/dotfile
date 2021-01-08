@@ -7,10 +7,10 @@
 
 # Load Zinit
 if [[ ! -d ~/.zinit ]]; then
-  mkdir -p ~/.zinit && \
-    git clone --depth 1 \
-      https://github.com/zdharma/zinit.git \
-      ~/.zinit/bin
+    mkdir -p ~/.zinit && \
+        git clone --depth 1 \
+        https://github.com/zdharma/zinit.git \
+        ~/.zinit/bin
 fi
 source ~/.zinit/bin/zinit.zsh
 
@@ -19,20 +19,65 @@ source ~/.zinit/bin/zinit.zsh
 zinit depth"1" light-mode for \
   @romkatv/powerlevel10k
 
+zinit wait"0" silent depth"1" light-mode for \
+{{- if eq .chezmoi.os "darwin" }}
+    @PZTM::osx \
+{{- end }}
+{{- if eq .chezmoi.os "linux" }}
+    @PZTM::command-not-found \
+{{- end }}
+    @wfxr/forgit \
+    @thetic/extract \
+    @MichaelAquilina/zsh-you-should-use \
+    @PZTM::gpg \
+    @PZTM::gnu-utility \
+    @PZTM::history \
+    @PZTM::directory \
+    @zsh-users/zsh-history-substring-search \
+    multisrc:'shell/{completion,key-bindings}.zsh' \
+        @junegunn/fzf \
+    atinit"zicompinit; zicdreplay" \
+        @Aloxaf/fzf-tab \
+    as"completion" \
+        @https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
+    atinit"zicompinit; zicdreplay" wait"0b" \
+        @zdharma/fast-syntax-highlighting \
+    blockf atpull'zinit creinstall -q .' \
+        @zsh-users/zsh-completions
+
+# Zsh autocomplete
+## Fix ssh autocomplete
+zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
+h=()
+if [[ -r $HOME/.ssh/config ]]; then # 讀取 config 然後把 Host 弄出來
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+if [[ $#h -gt 0 ]]; then
+  zstyle ':completion:*:ssh:*' hosts $h
+  zstyle ':completion:*:slogin:*' hosts $h
+fi
 
 ## Cache zsh complete
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-# The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored _correct _approximate
-zstyle ':completion:*' max-errors 2
+## The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/jw910731/.zshrc'
+zstyle ':completion:*:descriptions' format '-- %d --'
+zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:complete:*:options' sort false
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
+zstyle ":completion:*:git-checkout:*" sort false
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+zstyle :compinstall filename '/home/jw910731/.zshrc'
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+## End of lines added by compinstall
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000

@@ -33,12 +33,12 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     status		              # return value
-    context                 # username@host 
+    context                 # username@host
+    dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                   # \n
-    dir                       # current directory
-    #prompt_char              # prompt symbol
+    prompt_char              # prompt symbol
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -210,9 +210,9 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='grey'
   # Default current directory foreground color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='grey89'
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
