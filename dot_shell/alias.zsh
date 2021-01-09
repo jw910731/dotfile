@@ -38,10 +38,10 @@ alias mvi="${aliases[mv]:-mv} -i"
 alias cpi="${aliases[cp]:-cp} -i"
 alias lni="${aliases[ln]:-ln} -i"
 if zstyle -T ':prezto:module:utility' safe-ops; then
-  alias rm="${aliases[rm]:-rm} -i"
-  alias mv="${aliases[mv]:-mv} -i"
-  alias cp="${aliases[cp]:-cp} -i"
-  alias ln="${aliases[ln]:-ln} -i"
+    alias rm="${aliases[rm]:-rm} -i"
+    alias mv="${aliases[mv]:-mv} -i"
+    alias cp="${aliases[cp]:-cp} -i"
+    alias ln="${aliases[ln]:-ln} -i"
 fi
 
 # list file aliases
@@ -65,9 +65,9 @@ alias grep="${aliases[grep]:-grep} --color=auto"
 
 # File Download
 if (( $+commands[curl] )); then
-  alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
+    alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 elif (( $+commands[wget] )); then
-  alias get='wget --continue --progress=bar --timestamping'
+    alias get='wget --continue --progress=bar --timestamping'
 fi
 
 # docker
@@ -87,3 +87,8 @@ alias dcr='docker-compose restart'
 alias dcub='docker-compose up -d --build'
 alias dcb='docker-compose build'
 alias dcd='docker-compose down'
+
+# code with env var
+if (( $+commands[code] )); then
+    alias code="$HOME/.shell/code.zsh"
+fi
