@@ -35,8 +35,6 @@ zinit wait"0" silent depth"1" light-mode for \
     @PZTM::history \
     @PZTM::directory \
     @zsh-users/zsh-history-substring-search \
-    multisrc:'shell/{completion,key-bindings}.zsh' \
-        @junegunn/fzf \
     atinit"zicompinit; zicdreplay" \
         @Aloxaf/fzf-tab \
     as"completion" \
@@ -65,9 +63,10 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 ## The following lines were added by compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-suffixeszstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose true
-zstyle ':completion:*:descriptions' format '-- %d --'
+zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:complete:*:options' sort false
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
@@ -108,6 +107,7 @@ source $HOME/.sh_env
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 {{- if eq .chezmoi.os "darwin" }}
 test -e /Users/jw910731/.iterm2_shell_integration.zsh && source /Users/jw910731/.iterm2_shell_integration.zsh || true
