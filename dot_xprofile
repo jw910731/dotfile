@@ -1,0 +1,10 @@
+export LANG=zh_TW.UTF-8
+export LANGUAGE="zh_TW:zh"
+export LC_ALL=""
+
+export XIM_PROGRAM=hime
+export XIM=hime
+export GTK_IM_MODULE=hime
+export QT_IM_MODULE=hime
+export XMODIFIERS=@im=hime
+hime &

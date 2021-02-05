@@ -16,7 +16,6 @@ fi
 typeset -gU path
 
 path=(
-    $HOME/dev
     $HOME/.local/bin
     $HOME/dev/bin
     $GOBIN

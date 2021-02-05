@@ -6,13 +6,6 @@
 
 # === General ===
 
-{{- if eq .chezmoi.os "linux" }}
-# Language
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US
-export LC_ALL="en_US.UTF-8"
-{{- end }}
-
 # Editor
 if (( $+commands[code] )); then
     export EDITOR="$HOME/.shell/code_wait.zsh"
