@@ -3,6 +3,14 @@ export BAT_PAGER="less -RF"
 export PAGER='less'
 export MANPAGER="most"
 
+if (( $+commands[code] )); then
+    export EDITOR="$HOME/.shell/code_wait.zsh"
+    export VISUAL="$HOME/.shell/code.zsh"
+else
+    export EDITOR="$(which joe)"
+    export VISUAL=${EDITOR}
+fi
+
 # Other env var
 if (( $+commands[go] )); then
 export GOPATH=$HOME/dev/go
