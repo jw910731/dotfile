@@ -2,12 +2,10 @@
 pinentry-program /usr/local/bin/pinentry-mac
 {{- end }}
 {{- if eq .chezmoi.os "linux" }}
-pinentry-program /usr/bin/pinentry
+pinentry-program /usr/bin/pinentry-qt
 {{- end }}
 default-cache-ttl 600
 max-cache-ttl 7200
 default-cache-ttl-ssh 600
 max-cache-ttl-ssh 7200
 enable-ssh-support
-#write-env-file
-#use-standard-socket
