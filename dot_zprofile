@@ -4,8 +4,8 @@ export PAGER='less'
 export MANPAGER="most"
 
 if (( $+commands[code] )); then
-    export EDITOR="$HOME/.shell/code_wait.zsh"
-    export VISUAL="$HOME/.shell/code.zsh"
+    export EDITOR="$HOME/.shell/code.zsh"
+    export VISUAL="$HOME/.shell/code_wait.zsh"
 else
     export EDITOR="$(which joe)"
     export VISUAL=${EDITOR}
