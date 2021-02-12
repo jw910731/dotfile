@@ -3,7 +3,11 @@ export BAT_PAGER="less -RF"
 export PAGER='less'
 export MANPAGER="most"
 
-if (( $+commands[code] )); then
+if (( $+commands[code] )) && 
+{{- if eq .chezmoi.os "linux" }}
+[[ ! -z $DISPLAY ]] && [[ ! -z $XAUTHORITY ]]
+{{- end }}
+then
     export EDITOR="$HOME/.shell/code.zsh"
     export VISUAL="$HOME/.shell/code_wait.zsh"
 else

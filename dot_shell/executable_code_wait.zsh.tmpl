@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+{{- if eq .chezmoi.os "darwin" }}
+$(which code) --wait -- "$@"
+{{- end }}
+{{- if eq .chezmoi.os "linux" }}
+env LANG=zh_TW.UTF-8 LC_ALL=zh_TW.UTF-8 LANGUAGE=zh_TW:zh $(which code) --wait -- "$@"
+{{- end }}
