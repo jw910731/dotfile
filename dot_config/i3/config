@@ -150,9 +150,9 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus move scratchpad
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus scratchpad show
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -200,14 +200,14 @@ bar {
         focused_workspace       #2f343f #bf616a #d8dee8
         active_workspace        #2f343f #2f343f #d8dee8
         inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
+        urgent_workspace       #2f343f #ebcb8b #2f343f
     }
     status_command i3status -c $conf_root/i3status.conf
 }
 
 # Color definition
 # class                 border  backgr. text    indicator child_border
-client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused          #2f343f #2f343f #d8dee8 #d8dee8 #d8dee8
 client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
