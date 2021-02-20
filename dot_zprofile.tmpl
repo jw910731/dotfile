@@ -15,6 +15,13 @@ else
     export VISUAL=${EDITOR}
 fi
 
+# Only in terminal emulator
+{{- if eq .chezmoi.os "linux" }}
+if [[ ! -z $DISPLAY ]] && [[ ! -z $XAUTHORITY ]]; then
+    export TERM="screen-256color"
+fi
+{{- end }}
+
 # Other env var
 if (( $+commands[go] )); then
 export GOPATH=$HOME/dev/go
