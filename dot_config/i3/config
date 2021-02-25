@@ -38,7 +38,8 @@ exec --no-startup-id "nitrogen --restore &" # Wallpaper
 exec_always --no-startup-id xrdb -load $conf_root/Xresources # apply Xresources
 exec --no-startup-id /usr/lib/pam_kwallet_init # init Kwallet
 exec /usr/lib/polkit-kde-authentication-agent-1 # boostrap KDE polkit
-exec --no-startup-id "dunst -config $conf_root/dunst.conf"
+exec --no-startup-id "dunst -config $conf_root/dunst.conf" # start dunst
+exec_always --no-startup-id numlockx on # enable numlock
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -63,6 +64,7 @@ bindsym $mod+space exec "rofi -modi drun,run,calc -lines 12 -padding 18 -width 6
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
 
 # change focus
 #bindsym $mod+j focus left
