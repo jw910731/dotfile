@@ -208,13 +208,20 @@ bar {
         inactive_workspace      #2f343f #2f343f #d8dee8
         urgent_workspace       #2f343f #ebcb8b #2f343f
     }
-    wheel_up_cmd nop
-    wheel_down_cmd nop
+    # reconfigure scroll event
+    bindsym $mod+button4 workspace next
+	bindsym $mod+button5 workspace prev
+	bindsym button4 nop
+	bindsym button5 nop
+	bindsym button6 nop
+	bindsym button7 nop
+	# bar setting
     position bottom
     strip_workspace_numbers yes
     status_command i3status -c $conf_root/i3status.conf
     
 }
+
 
 # Color definition
 # class                 border  backgr. text    indicator child_border
@@ -224,6 +231,9 @@ client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder      #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.background       #2f343f
+
+# Style Settings
+hide_edge_borders smart
 
 # Windows specific settings
 for_window [class="(?i)pinentry"] move position mouse; fullscreen enable; focus
