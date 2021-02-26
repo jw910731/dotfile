@@ -36,10 +36,9 @@ exec --no-startup-id nm-applet
 # Start user daemon
 exec --no-startup-id "nitrogen --restore &" # Wallpaper
 exec_always --no-startup-id xrdb -load $conf_root/Xresources # apply Xresources
-exec --no-startup-id /usr/lib/pam_kwallet_init # init Kwallet
-exec /usr/lib/polkit-kde-authentication-agent-1 # boostrap KDE polkit
 exec --no-startup-id "dunst -config $conf_root/dunst.conf" # start dunst
 exec_always --no-startup-id numlockx on # enable numlock
+exec --no-startup-id "dex -ae i3" # auto start xdg-autostart
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
