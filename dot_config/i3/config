@@ -38,6 +38,7 @@ exec --no-startup-id "nitrogen --restore &" # Wallpaper
 exec_always --no-startup-id xrdb -merge $conf_root/Xresources # apply Xresources
 exec --no-startup-id "dunst -config $conf_root/dunst.conf" # start dunst
 exec_always --no-startup-id numlockx on # enable numlock
+exec /usr/lib/polkit-kde-authentication-agent-1 # boostrap KDE polkit
 exec --no-startup-id "dex -ae i3" # auto start xdg-autostart
 
 # Use pactl to adjust volume in PulseAudio.
