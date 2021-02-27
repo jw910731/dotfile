@@ -4,6 +4,7 @@ GTK_USE_PORTAL=1
 
 # Screen HiDPI
 export QT_AUTO_SCREEN_SCALE_FACTOR=1.25
+xrdb -merge $HOME/.Xresources
 
 # Locale Setting
 export LANG=zh_TW.UTF-8
