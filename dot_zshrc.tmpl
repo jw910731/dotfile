@@ -98,6 +98,7 @@ select-word-style bash
 {{- if eq .chezmoi.os "darwin" }}
 bindkey "^[^[[C" forward-word # meta + right arrow
 bindkey "^[^[[D" backward-word # meta + left arrow
+bindkey '^[^?' backward-kill-word # meta + delete
 {{- end }}
 {{- if eq .chezmoi.os "linux" }}
 bindkey "^H" backward-kill-word # ctrl + backspace
