@@ -25,6 +25,7 @@ zinit wait"0" silent depth"1" light-mode for \
 {{- end }}
 {{- if eq .chezmoi.os "linux" }}
     @PZTM::command-not-found \
+    @endaaman/lxd-completion-zsh \
 {{- end }}
     @OMZP::git \
     @wfxr/forgit \
