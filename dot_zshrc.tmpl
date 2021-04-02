@@ -79,6 +79,11 @@ autoload -Uz compinit
 compinit
 ## End of lines added by compinstall
 
+# Completion for kitty
+if (( $+commands[kitty] )); then
+    kitty + complete setup zsh | source /dev/stdin
+fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -92,6 +97,10 @@ bindkey -e
 setopt AUTO_PARAM_SLASH # (autocomplete) If completed parameter is a directory, add a trailing slash
 unsetopt MENU_COMPLETE # Do not autoselect the first completion entry
 unsetopt FLOW_CONTROL # Disable start/stop characters (^Z, ^C, etc) in shell editor
+
+# Set title
+preexec() {print -Pn "\e]0;zsh [ $1 ]\a"}
+precmd () {print -Pn "\e]0;zsh ( %~ )\a"}
 
 autoload -U select-word-style
 select-word-style bash
