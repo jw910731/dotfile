@@ -1,6 +1,9 @@
 # proper settings for i3
-GTK_USE_PORTAL=1
+export GTK_USE_PORTAL=1
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# Setup Terminal
+export TERMINAL=kitty
 
 # Screen HiDPI
 export QT_AUTO_SCREEN_SCALE_FACTOR=1.25
