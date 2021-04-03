@@ -87,8 +87,3 @@ alias dcr='docker-compose restart'
 alias dcub='docker-compose up -d --build'
 alias dcb='docker-compose build'
 alias dcd='docker-compose down'
-
-# code with env var
-if (( $+commands[code] )); then
-    alias code="$HOME/.shell/code.zsh"
-fi

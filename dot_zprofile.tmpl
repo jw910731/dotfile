@@ -8,7 +8,7 @@ if (( $+commands[code] )) &&
 [[ ! -z $DISPLAY ]] && [[ ! -z $XAUTHORITY ]]
 {{- end }}
 then
-    export EDITOR="$HOME/.shell/code.zsh"
+    export EDITOR="code"
     export VISUAL="$HOME/.shell/code_wait.zsh"
 else
     export EDITOR="$(which joe)"
