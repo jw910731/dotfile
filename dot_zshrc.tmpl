@@ -45,18 +45,6 @@ zinit wait"0" silent depth"1" light-mode for \
     blockf atpull'zinit creinstall -q .' \
         @zsh-users/zsh-completions
 
-# Zsh autocomplete
-## Fix ssh autocomplete
-zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
-h=()
-if [[ -r $HOME/.ssh/config ]]; then # 讀取 config 然後把 Host 弄出來
-  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
-fi
-if [[ $#h -gt 0 ]]; then
-  zstyle ':completion:*:ssh:*' hosts $h
-  zstyle ':completion:*:slogin:*' hosts $h
-fi
-
 ## Cache zsh complete
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
@@ -125,7 +113,7 @@ source $HOME/.sh_env
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# iterm integration
 {{- if eq .chezmoi.os "darwin" }}
+# iterm integration
 test -e /Users/jw910731/.iterm2_shell_integration.zsh && source /Users/jw910731/.iterm2_shell_integration.zsh || true
 {{- end }}
