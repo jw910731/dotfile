@@ -10,14 +10,13 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1.25
 xrdb -merge $HOME/.Xresources
 
 # Locale Setting
-export LANG=zh_TW.UTF-8
-export LANGUAGE="zh_TW:zh"
-export LC_ALL=""
+#export LANG=zh_TW.UTF-8
+#export LANGUAGE="zh_TW:zh"
+#export LC_ALL="zh_TW.UTF-8"
+source $HOME/.config/locale.conf
 
 # IME Setup
-export XIM_PROGRAM=hime
-export XIM=hime
-export GTK_IM_MODULE=hime
-export QT_IM_MODULE=hime
-export XMODIFIERS=@im=hime
-hime &
+export QT_IM_MODULE=ibus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS="@im=ibus"
+ibus-daemon -drx
