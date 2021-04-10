@@ -10,4 +10,4 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 #MONITORS=$(xrandr --query | grep " connected" | cut -d" " -f1)
 
 polybar --config=$HOME/.config/i3/polybar.ini default > /tmp/polybar.log 2>&1 &
-echo "Bars launched..."/usr/local/share/doc/polybar/config
+echo "Bars launched..."
