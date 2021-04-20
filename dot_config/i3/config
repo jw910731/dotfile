@@ -236,4 +236,5 @@ for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 for_window[class="(?i)nm-connection-editor"] floating enable
 for_window[class="(?i)blueman-*"] floating enable
+for_window[class="(?i)1password"] floating enable
 no_focus [class="plasmashell" window_type="notification"]
