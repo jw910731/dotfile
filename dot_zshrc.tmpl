@@ -37,6 +37,8 @@ zinit wait"0" silent depth"1" light-mode for \
     @zsh-users/zsh-history-substring-search \
     nocompile \
         MenkeTechnologies/zsh-cargo-completion \
+    has"rustup" as"completion" id-as"rust_completion" atclone"rustup completions zsh > _rustup" atpull"%atclone" run-atpull \
+        zdharma/null \
     atinit"zicompinit; zicdreplay" \
         @Aloxaf/fzf-tab \
     as"completion" \
