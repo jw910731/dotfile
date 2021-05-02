@@ -1,5 +1,10 @@
 # EDITOR
+{{- if eq .chezmoi.os "linux" }}
 export BAT_PAGER="less -RF"
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+export BAT_PAGER="less -R"
+{{- end }}
 export PAGER='less'
 export MANPAGER="most"
 
@@ -47,7 +52,12 @@ path=(
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
-export LESS='-R -F -g -i -M -R -S -w -z-4'
+{{- if eq .chezmoi.os "linux" }}
+export LESS='-R -F -g -i -M -S -w -z-4'
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+export LESS='-R -g -i -S -w -z-4'
+{{- end }}
 
 # Bat related config
 export BAT_THEME='OneHalfDark'
