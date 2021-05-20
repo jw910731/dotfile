@@ -238,3 +238,4 @@ for_window[class="(?i)nm-connection-editor"] floating enable
 for_window[class="(?i)blueman-*"] floating enable
 for_window[class="(?i)1password"] floating enable
 no_focus [class="plasmashell" window_type="notification"]
+for_window [class="jetbrains-*" title="win0|Welcome to *"] floating enable;
