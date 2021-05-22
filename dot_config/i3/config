@@ -45,6 +45,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+# Dunst control hotkeys 
+bindsym $mod+Escape exec dunstctl close-all
+bindsym $mod+t exec dunstctl history-pop
+
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -201,7 +206,6 @@ bindsym $mod+r mode "resize"
 bar {
 	i3bar_command "sh $HOME/.config/i3/launch_polybar.sh"
 }
-
 
 # Color definition
 # class                 border  backgr. text    indicator child_border
