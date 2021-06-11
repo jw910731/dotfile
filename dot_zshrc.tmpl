@@ -71,7 +71,12 @@ autoload -Uz compinit
 compinit
 ## End of lines added by compinstall
 
-# Completion for kitty
+## 1password autocompletion
+if (( $+commands[op] )); then
+    eval "$(op completion zsh)"; compdef _op op
+fi
+
+# kitty autocompletion
 if (( $+commands[kitty] )); then
     kitty + complete setup zsh | source /dev/stdin
 fi
