@@ -16,7 +16,8 @@ xrdb -merge $HOME/.Xresources
 source $HOME/.config/locale.conf
 
 # IME Setup
-export QT_IM_MODULE=ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS="@im=ibus"
-ibus-daemon -drx
+export QT_IM_MODULE=hime
+export GTK_IM_MODULE=hime
+export XMODIFIERS="@im=hime"
+#ibus-daemon -drx
+hime&
