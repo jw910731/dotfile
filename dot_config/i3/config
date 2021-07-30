@@ -250,3 +250,17 @@ for_window[class="(?i)1password"] floating enable
 no_focus [class="plasmashell" window_type="notification"]
 for_window [class="jetbrains-*" title="win0|Welcome to *"] floating enable;
 for_window [class="jetbrains-toolbox"] floating enable;
+
+# Disable title bar
+default_border pixel 0
+default_floating_border pixel 0
+
+# Gap setting
+gaps inner 8
+
+# Smart Gap
+smart_gaps on
+
+# Smart border
+smart_borders on
+smart_borders no_gaps
