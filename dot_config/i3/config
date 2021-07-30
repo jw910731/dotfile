@@ -34,6 +34,7 @@ font pango:Noto Sans 12
 exec --no-startup-id "nitrogen --restore &" # Wallpaper
 exec_always --no-startup-id xrdb -merge $conf_root/Xresources # apply Xresources
 exec --no-startup-id "dunst -config $conf_root/dunst.conf" # start dunst
+exec --no-startup-id "picom -b --config $conf_root/picom.conf"
 exec_always --no-startup-id numlockx on # enable numlock
 exec /usr/lib/polkit-kde-authentication-agent-1 # boostrap KDE polkit
 exec --no-startup-id "dex -ae i3" # auto start xdg-autostart
