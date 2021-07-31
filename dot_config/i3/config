@@ -252,9 +252,10 @@ no_focus [class="plasmashell" window_type="notification"]
 for_window [class="jetbrains-*" title="win0|Welcome to *"] floating enable;
 for_window [class="jetbrains-toolbox"] floating enable;
 
+
 # Disable title bar
 default_border pixel 0
-default_floating_border pixel 0
+default_floating_border normal
 
 # Gap setting
 gaps inner 8
