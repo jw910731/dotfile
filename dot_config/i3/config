@@ -259,6 +259,7 @@ default_floating_border normal
 
 # Gap setting
 gaps inner 8
+gaps top -8 # cancel top gap
 
 # Smart Gap
 smart_gaps on
