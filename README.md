@@ -37,6 +37,7 @@ On Linux you need to satisfy all requirements to gain a consistant experience in
 - polybar
 - dbus-python
 - noto-fonts-cjk
+- siji-git
 - playerctl
 - nitrogen
 - dex
