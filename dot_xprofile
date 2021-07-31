@@ -19,5 +19,4 @@ source $HOME/.config/locale.conf
 export QT_IM_MODULE=hime
 export GTK_IM_MODULE=hime
 export XMODIFIERS="@im=hime"
-#ibus-daemon -drx
 hime&
