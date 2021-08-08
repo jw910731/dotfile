@@ -254,8 +254,10 @@ for_window [class="jetbrains-toolbox"] floating enable;
 
 
 # Disable title bar
-default_border pixel 0
+default_border none
 default_floating_border normal
+for_window [floating_from=user] border normal
+for_window [tiling_from=user] border none
 
 # Gap setting
 gaps inner 8
