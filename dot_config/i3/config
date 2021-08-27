@@ -56,6 +56,8 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+Escape exec dunstctl close-all
 bindsym $mod+t exec dunstctl history-pop
 
+# Printscreen => flameshot
+bindsym --release Print exec "flameshot gui"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
