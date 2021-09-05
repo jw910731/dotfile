@@ -1,5 +1,5 @@
 configuration {
-	modi: ["combi", "run"];
+	modi: ["drun", "run", "calc"];
 	font: "Noto Sans 14";
 /*	bw: 1;*/
 /*	location: 0;*/
@@ -53,7 +53,7 @@ configuration {
 /*	show-match: true;*/
 /*	theme: ;*/
 /*	max-history-size: 25;*/
-/*	combi-hide-mode-prefix: false;*/
+	combi-hide-mode-prefix: true;
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
 /*	window-thumbnail: false;*/
@@ -142,11 +142,5 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
-	drun{
-		display-name: "";
-	}
-	calc{
-		display-name: "🧮";
-	}
 }
 @theme "~/.config/rofi/themes/jw910731.rasi"
