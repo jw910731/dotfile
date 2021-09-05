@@ -142,5 +142,11 @@ configuration {
 /*	me-select-entry: "MousePrimary";*/
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
+	drun{
+		display-name: "";
+	}
+	calc{
+		display-name: "🧮";
+	}
 }
 @theme "~/.config/rofi/themes/jw910731.rasi"
