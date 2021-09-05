@@ -58,15 +58,3 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-
-! ------------------------------------------------------------------------------
-! Rofi configs
-! ------------------------------------------------------------------------------
-
-rofi.font: "Noto Sans 12"
-rofi.color-enabled: true
-rofi.color-window: #2e3440, #2e3440, #2e3440
-rofi.color-normal: #2e3440, #d8dee9, #2e3440, #2e3440, #bf616a
-rofi.color-active: #2e3440, #b48ead, #2e3440, #2e3440, #93e5cc
-rofi.color-urgent: #2e3440, #ebcb8b, #2e3440, #2e3440, #ebcb8b
-rofi.modi: drun, run
