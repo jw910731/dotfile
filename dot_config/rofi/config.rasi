@@ -1,9 +1,5 @@
 configuration {
 	modi: ["combi", "run"];
-/*	width: 50;
-	lines: 12;
-	columns: 2;
-	padding: 18;*/
 	font: "Noto Sans 14";
 /*	bw: 1;*/
 /*	location: 0;*/
@@ -56,10 +52,6 @@ configuration {
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 /*	theme: ;*/
-/*	color-normal: "#2e3440, #d8dee9, #2e3440, #2e3440, #bf616a";
-	color-urgent: "#2e3440, #ebcb8b, #2e3440, #2e3440, #ebcb8b";
-	color-active: "#2e3440, #b48ead, #2e3440, #2e3440, #93e5cc";
-	color-window: "#2e3440, #2e3440, #2e3440";*/
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
@@ -151,4 +143,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@theme "/home/jw910731/.config/rofi/themes/jw910731.rasi"
+@theme "~/.config/rofi/themes/jw910731.rasi"
