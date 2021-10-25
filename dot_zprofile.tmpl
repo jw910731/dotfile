@@ -40,6 +40,9 @@ fi
 typeset -gU path
 
 path=(
+    {{- if eq .chezmoi.os "darwin" }}
+    /usr/local/sbin
+    {{- end }}
     $HOME/.local/bin
     $HOME/dev/bin
     $GOBIN
