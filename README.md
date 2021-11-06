@@ -27,8 +27,9 @@ On Linux you need to satisfy all requirements to gain a consistant experience in
 - pinentry-mac *(For hombrew mac)*
 
 # Linux X11 environment
-- i3wm-gaps **(i3wm is not supported)**
-- xresources (pacman: `xorg-xrdb`)
+Most of these are Arch Linux AUR or package name. You will need to find alternatives if you are not using Arch Linux.
+- i3wm-gaps **(i3wm is deprecated and is not compatible with this dot file)**
+- Xresources (pacman: `xorg-xrdb`)
 - xrandr
 - python3
 - rofi
@@ -42,6 +43,7 @@ On Linux you need to satisfy all requirements to gain a consistant experience in
 - nitrogen
 - dex
 - polkit-kde-agent
+- xidlehook *(optional)*
 - numlockx *(optional)*
 - ddcutil *(optional)*
 - picom *(optional)*
@@ -53,8 +55,8 @@ On Linux you need to satisfy all requirements to gain a consistant experience in
 Plan to migrate to sway. But HiDPi support of Xwayland is bad and the migration is suspended.
 *Working in progress*
 
-## Recommended tools
-The dotfiles is meant to be work with these tools.
+## Recommended util programs
+The dotfiles is meant to be work with these programs.
 - Terminal: kitty or iTerm2 (on mac)
 - Editor: joe & Visual Studio Code
 - VCS: git
