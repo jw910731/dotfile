@@ -13,7 +13,7 @@ echo Installing CLI stuff.
 
 if [ ! -e "$HOME/.zinit" ]; then
     mkdir ~/.zinit
-    git clone https://github.com/zdharma/zinit.git $HOME/.zinit/bin
+    git clone https://github.com/zdharma-continuum/zinit.git $HOME/.zinit/bin
     zsh -i -c "zinit self-update"
 fi
 

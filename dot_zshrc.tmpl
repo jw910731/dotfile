@@ -39,13 +39,13 @@ zinit wait"0" silent depth"1" light-mode for \
     nocompile \
         MenkeTechnologies/zsh-cargo-completion \
     has"rustup" as"completion" id-as"rust_completion" atclone"rustup completions zsh > _rustup" atpull"%atclone" run-atpull \
-        zdharma/null \
+        zdharma-continuum/null \
     atinit"zicompinit; zicdreplay" \
         @Aloxaf/fzf-tab \
     as"completion" \
         @https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
     atinit"zicompinit; zicdreplay" wait"0b" \
-        @zdharma/fast-syntax-highlighting \
+        @zdharma-continuum/fast-syntax-highlighting \
     blockf atpull'zinit creinstall -q .' \
         @zsh-users/zsh-completions
 
