@@ -31,7 +31,7 @@
   newHighlight = white bold 22
 
 [pull]
-	rebase = true
+	rebase = false
 
 [merge]
 	tool = joe
