@@ -34,7 +34,7 @@ def set_rotate(side, display):
 
 def query_rotation(display):
     result = subprocess.run(
-        ['/bin/bash', '-c', """xrandr --query --verbose | grep "DisplayPort-0" | cut -d ' ' -f 6"""], stdout=subprocess.PIPE)
+        ['/bin/bash', '-c', """xrandr --query --verbose | grep "{}" | cut -d ' ' -f 6""".format(display)], stdout=subprocess.PIPE)
     if result.returncode != 0:
         return None
     else:
@@ -58,7 +58,7 @@ def reload_wallpaper():
 
 def main():
     state = ddc_get_rotate(SN_ID)
-    if MAPPING[state] != query_rotation:
+    if MAPPING[state] != query_rotation(DISPLAY):
         set_rotate(MAPPING[state], DISPLAY)
         reload_wallpaper()
 
