@@ -39,7 +39,8 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 # boostrap KDE p
 exec --no-startup-id "dex -ae i3" # auto start xdg-autostart
 # setup auto sleep (xidlehook)
 exec --no-startup-id "xidlehook --not-when-fullscreen --not-when-audio --timer 5400 'systemctl suspend-then-hibernate' ''"
-exec "systemctl --user start scrn_rotd.service"
+exec "systemctl --user start scrn_rotd.service" # must start when xwindow starts
+exec "noisetorch -i" # start noisetorch
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -253,7 +254,7 @@ for_window[class="(?i)nm-connection-editor"] floating enable
 for_window[class="(?i)blueman-*"] floating enable
 for_window[class="(?i)1password"] floating enable
 no_focus [class="plasmashell" window_type="notification"]
-for_window [class="jetbrains-*" title="win0|Welcome to *"] floating enable;
+for_window [class="jetbrains-*" title=" |Welcome to *"] floating enable;
 for_window [class="jetbrains-toolbox"] floating enable;
 
 
