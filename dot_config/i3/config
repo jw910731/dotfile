@@ -38,7 +38,7 @@ exec_always --no-startup-id numlockx on # enable numlock
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 # boostrap KDE polkit
 exec --no-startup-id "dex -ae i3" # auto start xdg-autostart
 # setup auto sleep (xidlehook)
-exec --no-startup-id "xidlehook --not-when-fullscreen --not-when-audio --timer 5400 'systemctl suspend-then-hibernate' ''"
+#exec --no-startup-id "xidlehook --not-when-fullscreen --not-when-audio --timer 5400 'systemctl suspend-then-hibernate' ''"
 exec "systemctl --user start scrn_rotd.service" # must start when xwindow starts
 exec "noisetorch -i" # start noisetorch
 
