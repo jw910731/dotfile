@@ -3,7 +3,11 @@
 -istep 4
 
 {{- if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.arch "arm64" }}
+:include /opt/homebrew/etc/joe/joerc.zh_TW
+{{- else }}
 :include /usr/local/etc/joe/joerc.zh_TW
+{{- end }}
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
