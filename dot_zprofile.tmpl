@@ -72,3 +72,9 @@ export LESS='-R -g -i -S -w -z-4'
 
 # Bat related config
 export BAT_THEME='OneHalfDark'
+
+{{- if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.arch "arm64" }}
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+{{- end }}
+{{- end }}
