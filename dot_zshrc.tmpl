@@ -114,6 +114,11 @@ bindkey "^[[1;5C" forward-word # ctrl + right arrow
 bindkey "^[[1;5D" backward-word # ctrl + left arrow
 {{- end }}
 
+# Golang env setting
+if (( $+commands[go] )); then
+export GOPATH=$HOME/dev/go
+export GOBIN=$GOPATH/bin
+fi
 
 # Source general source files
 source $HOME/.sh_env
