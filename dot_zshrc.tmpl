@@ -131,3 +131,7 @@ source $HOME/.sh_env
 # iterm integration
 test -e /Users/jw910731/.iterm2_shell_integration.zsh && source /Users/jw910731/.iterm2_shell_integration.zsh || true
 {{- end }}
+
+{{- if eq .chezmoi.os "linux" }}
+gpgconf --create-socketdir >/dev/null 2>&1
+{{- end }}
