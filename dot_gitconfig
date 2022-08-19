@@ -16,7 +16,7 @@
 [user]
 	name = jw910731
 	email = jw910731@gmail.com
-	signingkey = B5831125BF047788
+	signingkey = 16D83FE3495FA263
 
 [commit]
 	gpgsign = true
