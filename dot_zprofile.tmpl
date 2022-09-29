@@ -8,9 +8,9 @@ export BAT_PAGER="less -R"
 export PAGER='less'
 export MANPAGER="most"
 
-if (( $+commands[code] )) && 
+if (( $+commands[code] )) \
 {{- if eq .chezmoi.os "linux" }}
-[[ ! -z $DISPLAY ]] && [[ ! -z $XAUTHORITY ]]
+&& [[ ! -z $DISPLAY ]] && [[ ! -z $XAUTHORITY ]]
 {{- end }}
 then
     export EDITOR="code"
