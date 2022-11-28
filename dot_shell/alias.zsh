@@ -87,3 +87,6 @@ alias dcr='docker-compose restart'
 alias dcub='docker-compose up -d --build'
 alias dcb='docker-compose build'
 alias dcd='docker-compose down'
+
+# Emacs
+alias emacs='emacs -nw'
