@@ -24,3 +24,8 @@ fi
 # zsh compaudit
 echo "Fixing dot file permission"
 zsh -i -c "compaudit | xargs chmod g-w" || true
+
+# install spacemacs
+if [ ! -d "$HOME/.emacs.d" ]; then
+    git clone https://github.com/syl20bnr/spacemacs "$HOME/.emacs.d"
+fi
