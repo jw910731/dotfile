@@ -1,3 +1,20 @@
+# PATH settings
+typeset -gU path
+
+path=(
+    {{- if eq .chezmoi.os "darwin" }}
+    {{- if eq .chezmoi.arch "arm64" }}
+    /opt/homebrew/bin
+    {{- else }}
+    /usr/local/sbin
+    {{- end }}
+    {{- end }}
+    $HOME/.local/bin
+    $HOME/dev/bin
+    $GOBIN
+    $path
+)
+
 # EDITOR
 {{- if eq .chezmoi.os "linux" }}
 export BAT_PAGER="less -RF"
@@ -32,25 +49,6 @@ if [ -x /usr/libexec/java_home ]; then
     export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 fi
 {{- end }}
-
-# PATH settings
-typeset -gU path
-
-path=(
-    {{- if eq .chezmoi.os "darwin" }}
-    {{- if eq .chezmoi.arch "arm64" }}
-    /opt/homebrew/bin
-    {{- else }}
-    /usr/local/sbin
-    {{- end }}
-    {{- end }}
-    
-    $HOME/.local/bin
-    $HOME/dev/bin
-    $GOBIN
-    $path
-)
-
 
 # LESS
 
