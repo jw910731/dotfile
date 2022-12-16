@@ -89,4 +89,4 @@ alias dcb='docker-compose build'
 alias dcd='docker-compose down'
 
 # Emacs
-alias emacs='emacs -nw'
+alias emacs='env TERM=xterm-direct emacs -nw'
