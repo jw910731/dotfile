@@ -7,13 +7,14 @@
     // Choose the order of the modules
     "modules-left": [
         "wlr/workspaces",
-        "hyprland/window",
         "hyprland/submap",
+        "hyprland/window"
     ],
     "modules-center": [
         "tray"
     ],
     "modules-right": [
+        "mpd",
         "pulseaudio",
         "battery",
         "keyboard-state",
@@ -150,9 +151,6 @@
             "",
             ""
         ]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
