@@ -16,8 +16,14 @@ source ~/.zinit/bin/zinit.zsh
 
 # Setup Zinit Plugins
 ## p10k
+{{- if eq .chezmoi.os "linux" }}
+if [[ $TERM != "linux" ]]; then
+{{- end }}
 zinit depth"1" light-mode for \
   @romkatv/powerlevel10k
+{{- if eq .chezmoi.os "linux" }}
+fi
+{{- end }}
 
 zinit wait"0" silent depth"1" light-mode for \
 {{- if eq .chezmoi.os "darwin" }}
