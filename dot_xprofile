@@ -16,7 +16,13 @@ xrdb -merge $HOME/.Xresources
 source $HOME/.config/locale.conf
 
 # IME Setup
-export QT_IM_MODULE=hime
-export GTK_IM_MODULE=hime
-export XMODIFIERS="@im=hime"
-hime&
+#export QT_IM_MODULE=hime
+#export GTK_IM_MODULE=hime
+#export XMODIFIERS="@im=hime"
+#hime&
+export QT_IM_MODULE=fcitx5
+export GTK_IM_MODULE=fcitx5
+export XMODIFIERS="@im=fcitx5"
+
+# xrdp Setup
+export PULSE_SCRIPT=/etc/xrdp/pulse/default.pa
