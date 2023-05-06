@@ -14,7 +14,7 @@
         "tray"
     ],
     "modules-right": [
-        "mpd",
+        "mpris",
         "pulseaudio",
         "battery",
         "keyboard-state",
@@ -56,37 +56,15 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
+    "mpris": {
+        "max-length": 50,
+        "format": "{player}: {player_icon} <b>{dynamic}</b>",
+        "format-paused": "{player}: {status_icon} {dynamic}",
+        "player-icons": {
+            "default": "▶"
         },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
+        "status-icons": {
+            "paused": "⏸"
         }
     },
     "tray": {
