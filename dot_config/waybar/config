@@ -7,13 +7,15 @@
     // Choose the order of the modules
     "modules-left": [
         "wlr/workspaces",
-        "hyprland/window"
+        "hyprland/window",
+        "hyprland/submap",
     ],
     "modules-center": [
         "tray"
     ],
     "modules-right": [
         "pulseaudio",
+        "battery",
         "keyboard-state",
         "clock"
     ],
@@ -26,16 +28,6 @@
         "format": "{name}",
         "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
         "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
     },
     "keyboard-state": {
         "numlock": true,
