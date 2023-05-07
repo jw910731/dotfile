@@ -135,7 +135,7 @@ source $HOME/.sh_env
 
 {{- if eq .chezmoi.os "darwin" }}
 # iterm integration
-test -e ~/.iterm2_shell_integration.zsh && source~/.iterm2_shell_integration.zsh || true
+test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh || true
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
