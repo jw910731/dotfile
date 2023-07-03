@@ -58,7 +58,8 @@ zinit wait"0" silent depth"1" light-mode for \
     atinit"zicompinit; zicdreplay" wait"0b" \
         @zdharma-continuum/fast-syntax-highlighting \
     blockf atpull'zinit creinstall -q .' \
-        @zsh-users/zsh-completions
+        @zsh-users/zsh-completions \
+    @https://github.com/ariaieboy/laravel-sail/blob/main/laravel-sail.plugin.zsh
 
 ## Cache zsh complete
 zstyle ':completion:*' use-cache on
