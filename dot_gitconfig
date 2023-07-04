@@ -1,6 +1,6 @@
 [core]
 	editor = "joe"
-
+	autocrlf = input	
 [diff]
     tool = vscode
 
