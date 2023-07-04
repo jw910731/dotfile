@@ -1,6 +1,7 @@
 [core]
 	editor = "joe"
 	autocrlf = input	
+	excludesfile = ~/.gitignore_global
 [diff]
     tool = vscode
 
