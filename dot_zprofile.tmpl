@@ -1,3 +1,8 @@
+{{- if eq .chezmoi.os "darwin" }}
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.pre.zsh"
+{{- end }}
+
 # PATH settings
 typeset -gU path
 
@@ -8,12 +13,20 @@ path=(
     {{- else }}
     /usr/local/sbin
     {{- end }}
+    $HOME/.fig/bin
     {{- end }}
     $HOME/.local/bin
     $HOME/dev/bin
     $GOBIN
     $path
 )
+
+if [ -d "$HOME/.composer/vendor/bin" ]; then
+    path=(
+        "$HOME/.composer/vendor/bin"
+        $path
+    )
+fi
 
 # EDITOR
 {{- if eq .chezmoi.os "linux" }}
@@ -70,3 +83,22 @@ export BAT_THEME='OneHalfDark'
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 {{- end }}
 {{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"
+{{- end }}
+
+{{- if eq .chezmoi.arch "arm64" }}
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+{{- end }}
+
+if [[ -d "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi

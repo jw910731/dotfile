@@ -1,3 +1,8 @@
+{{- if eq .chezmoi.os "darwin" }}
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+{{- end }}
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -53,7 +58,8 @@ zinit wait"0" silent depth"1" light-mode for \
     atinit"zicompinit; zicdreplay" wait"0b" \
         @zdharma-continuum/fast-syntax-highlighting \
     blockf atpull'zinit creinstall -q .' \
-        @zsh-users/zsh-completions
+        @zsh-users/zsh-completions \
+    @https://github.com/ariaieboy/laravel-sail/blob/main/laravel-sail.plugin.zsh
 
 ## Cache zsh complete
 zstyle ':completion:*' use-cache on
@@ -135,9 +141,14 @@ source $HOME/.sh_env
 
 {{- if eq .chezmoi.os "darwin" }}
 # iterm integration
-test -e ~/.iterm2_shell_integration.zsh && source~/.iterm2_shell_integration.zsh || true
+test -e ~/.iterm2_shell_integration.zsh && source ~/.iterm2_shell_integration.zsh || true
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
 gpgconf --create-socketdir >/dev/null 2>&1
+{{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 {{- end }}
