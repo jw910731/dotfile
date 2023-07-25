@@ -152,3 +152,7 @@ gpgconf --create-socketdir >/dev/null 2>&1
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 {{- end }}
+
+# Wasmer
+export WASMER_DIR="/Users/jw910731/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
