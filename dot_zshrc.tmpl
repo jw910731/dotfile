@@ -1,7 +1,7 @@
-{{- if eq .chezmoi.os "darwin" }}
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-{{- end }}
+# # {{- if eq .chezmoi.os "darwin" }}
+# # Fig pre block. Keep at the top of this file.
+# [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# {{- end }}
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -49,7 +49,9 @@ zinit wait"0" silent depth"1" light-mode for \
     @zsh-users/zsh-autosuggestions \
     nocompile \
         MenkeTechnologies/zsh-cargo-completion \
-    has"rustup" as"completion" id-as"rust_completion" atclone"rustup completions zsh > _rustup" atpull"%atclone" run-atpull \
+    has"rustup" as"completion" id-as"rust_completion" atclone"rustup completions zsh > _rustup" completions atpull"%atclone" run-atpull \
+        zdharma-continuum/null \
+    has"rye" as"completion" id-as"rye_completion" atclone"rye self completion -s zsh > _rye" completions atpull"%atclone" run-atpull \
         zdharma-continuum/null \
     atinit"zicompinit; zicdreplay" \
         @Aloxaf/fzf-tab \
@@ -152,7 +154,7 @@ gpgconf --create-socketdir >/dev/null 2>&1
 export WASMER_DIR="/Users/jw910731/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
-{{- if eq .chezmoi.os "darwin" }}
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-{{- end }}
+# {{- if eq .chezmoi.os "darwin" }}
+# # Fig post block. Keep at the bottom of this file.
+# [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# {{- end }}
