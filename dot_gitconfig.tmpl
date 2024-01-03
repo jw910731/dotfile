@@ -17,8 +17,17 @@
 [user]
 	name = jw910731
 	email = jw910731@gmail.com
-	signingkey = 16D83FE3495FA263
+{{- if eq .chezmoi.os "darwin" }}
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIlmEeuqIj2EQuHMhiua+C34/mibY9KeMwAyQNj299nl
 
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+{{- else }}
+	signingkey = 16D83FE3495FA263
+{{- end }}
 [commit]
 	gpgsign = true
 
