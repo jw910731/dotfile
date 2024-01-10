@@ -122,13 +122,6 @@ bindkey "^[[1;3C" forward-word # meta + right arrow
 bindkey "^[[1;3D" backward-word # meta + left arrow
 {{- end }}
 
-# Golang env setting
-if (( $+commands[go] )); then
-export GOPATH=$HOME/dev/go
-export GOBIN=$GOPATH/bin
-PATH=$GOBIN:$PATH
-fi
-
 # Source general source files
 source $HOME/.sh_env
 

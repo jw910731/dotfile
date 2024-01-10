@@ -1,3 +1,9 @@
+# Golang env setting
+if (( $+commands[go] )); then
+export GOPATH=$HOME/dev/go
+export GOBIN=$GOPATH/bin
+fi
+
 # PATH settings
 typeset -gU path
 
@@ -9,6 +15,7 @@ path=(
     /usr/local/sbin
     {{- end }}
     {{- end }}
+    $GOBIN
     $HOME/.local/bin
     $HOME/dev/bin
     $path
