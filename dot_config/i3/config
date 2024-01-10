@@ -167,10 +167,10 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # advance or back forth workspace
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-bindsym $mod+Ctrl+Shift+Right move container to workspace next
-bindsym $mod+Ctrl+Shift+Left move container to workspace prev
+bindsym Ctrl+Right workspace next
+bindsym Ctrl+Left workspace prev
+# bindsym Ctrl+Shift+Right move container to workspace next
+# bindsym Ctrl+Shift+Left move container to workspace prev
 bindsym $mod+Tab workspace next
 
 # Make the currently focused window a scratchpad
