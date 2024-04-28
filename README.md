@@ -1,3 +1,6 @@
+# This Repository Is No Longer Used and Maintained
+I uses nix and the related file are placed here: [https://github.com/jw910731/nixfile](https://github.com/jw910731/nixfile).
+
 # Intro
 This is my dot files for my working Linux and Mac OS X desktop environment. Including zsh config, gnupg config, i3 config (for Linux) and some utils for daily use.
 
